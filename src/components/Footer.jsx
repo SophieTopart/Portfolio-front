@@ -1,25 +1,19 @@
 import styled from "styled-components";
-import Theme from "../assets/styles/Theme";
+import Theme, { Container } from "../assets/styles/Theme";
+import IconsContact from "../assets/styles/Icons";
 
-const RoundDiv = styled.div`
+const RoundDiv = styled(Container)`
   position: absolute;
-  bottom: -80%;
-  left: -20%;
   background-color: ${Theme.colorStrawberry};
-  height: 40%;
-  width: 300%;
-  border-radius: 50%;
-
-  &:before {
-    content: "";
-    position: absolute;
-    height: 10rem;
-    bottom: -12px;
-    left: 0;
-    right: 0;
-    background: ${Theme.colorStrawberry};
-  }
+  height: 10rem;
+  width: 100vw;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 10%;
 `;
 export default function Footer() {
-  return <RoundDiv></RoundDiv>;
+  return (
+    <RoundDiv flex aiCenter jcCenter>
+      <IconsContact />
+    </RoundDiv>
+  );
 }

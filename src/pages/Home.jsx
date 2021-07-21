@@ -1,27 +1,18 @@
-
-import Footer from "../components/Footer";
-import Theme, { Container } from "../assets/styles/Theme";
+import Theme, { Container, Icon } from "../assets/styles/Theme";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import HTML from "../assets/images/Html-css-js.png";
 import React from "../assets/images/react.png";
 import Node from "../assets/images/node.png";
 import StyledComp from "../assets/images/styled.png";
-import Github from "../assets/images/icons8-github.png";
-import Linkedin from "../assets/images/icons8-linkedin.png";
 import Time from "../assets/images/icons8-time.png";
+import IconsContact from "../assets/styles/Icons";
 
 const Logo = styled.img`
   width: 5rem;
   height: 5rem;
 `;
-const Icon = styled.img`
-  width: 3rem;
-  height: 3rem;
-  :hover {
-    opacity: 0.5;
-  }
-`;
+
 const H2 = styled.h2`
   margin: 0 0 3rem 0;
 `;
@@ -41,7 +32,6 @@ const RoundedDiv = styled(Container)`
 export default function Home() {
   return (
     <>
-      
       <Container>
         <PaddedDiv>
           <H2>Mes technos</H2>
@@ -69,27 +59,13 @@ export default function Home() {
           </Link>
           <h4>Ou pour me contacter, c'est par ici !</h4>
           <Container>
-            <a
-              href="https://github.com/SophieTopart"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon src={Github} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/sophie-topart-59a0b893/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Icon src={Linkedin} />
-            </a>
+            <IconsContact />
           </Container>
         </RoundedDiv>
         <Container>
           <h2>Mes projets</h2>
         </Container>
       </Container>
-      <Footer />
     </>
   );
 }

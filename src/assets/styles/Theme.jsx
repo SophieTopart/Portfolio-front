@@ -21,6 +21,15 @@ export const Container = styled.div`
   ${(props) => props.acCenter && "align-content:center"};
   ${(props) => props.jcCenter && "justify-content:center"};
   ${(props) => props.spaceA && "justify-content:space-around"}
+  ${(props) => props.start && "justify-content:flex-start"}
+`;
+
+export const Icon = styled.img`
+  width: 3rem;
+  height: 3rem;
+  :hover {
+    opacity: 0.5;
+  }
 `;
 
 const Theme = {
