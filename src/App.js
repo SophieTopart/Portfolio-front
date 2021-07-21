@@ -1,25 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import RouterApp from './Router'
+import GlobalStyle from './assets/styles/GlobalStyle'
+import { ThemeProvider } from 'styled-components'
+import Theme from './assets/styles/Theme'
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      <ThemeProvider theme={Theme}>  
+          <RouterApp />
+      </ThemeProvider>
     </div>
   );
 }
 
-export default App;
+
