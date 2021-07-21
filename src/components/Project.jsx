@@ -4,8 +4,8 @@ import Github from "../assets/images/icons8-github.png"
 import Site from "../assets/images/icons8-site.png"
 
 const ProjectContainer = styled(Container)`
- height: 20rem;
- width: 20rem;
+ height: 28rem;
+ width: 22rem;
  background: ${Theme.colorBeige};
  border-top-left-radius: 20%;
   border-top-right-radius: 40%;
@@ -19,12 +19,20 @@ export const SmallIcon = styled(Icon)`
   }
 `;
 
+const NarrowContainer = styled(Container)`
+width: 15rem;
+text-align: justify;
+`
+
 export default function Projects() {
     return (
-        <ProjectContainer>
+      <ProjectContainer flex column aiCenter jcCenter>
             <h2>Titre</h2>
+            <NarrowContainer>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laborum deserunt voluptatum tempora voluptate voluptatem sint facere delectus dicta alias omnis voluptatibus molestias itaque laboriosam fuga illum sit ipsam, odit natus.</p>
-            <a
+        </NarrowContainer>
+        <Container block>
+          <a
         href="https://github.com/SophieTopart"
         target="_blank"
         rel="noopener noreferrer"
@@ -37,7 +45,8 @@ export default function Projects() {
         rel="noopener noreferrer"
       >
         <SmallIcon src={Site} />
-      </a>
+          </a>
+          </Container>
         </ProjectContainer>
         
     )

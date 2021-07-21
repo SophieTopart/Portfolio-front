@@ -74,7 +74,8 @@ export default function Home() {
             L'un des credo de la Wild Code School, <br />
             c'est la pédagogie inversée, et donc l'apprentissage par la pratique. <br />
                       Au cours de ma formation, nous avons pu réaliser trois projets,<br />
-                      dont un professionnel, selon les demandes de notre cliente.
+            dont un professionnel, selon les demandes de notre cliente. <br />
+            Nous avons également participé à deux hackathons.
                   </p>
                   <h4>N'hésitez pas à aller les étudier en détail !</h4>
                   <Link to="/projects">
