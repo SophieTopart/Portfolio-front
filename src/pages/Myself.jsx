@@ -213,6 +213,9 @@ export default function Myself() {
           </p>
         </VerticalTimelineElement>
       </VerticalTimeline>
+      <Container flex start>
+        <ArrowIcon />
+      </Container>
     </>
   );
 }
