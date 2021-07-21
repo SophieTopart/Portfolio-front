@@ -27,6 +27,7 @@ export const Container = styled.div`
 export const Icon = styled.img`
   width: 3rem;
   height: 3rem;
+  margin: 1rem;
   :hover {
     opacity: 0.5;
   }
