@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import ArrowIcon from "../assets/styles/Arrow";
 import Circle from "../assets/images/icons8-circle.png";
@@ -8,9 +8,8 @@ import { Container, Icon } from "../assets/styles/Theme";
 import Project from "../components/Project";
 
 const InvisibleIcon = styled(Icon)`
-opacity: 0;
-
-`
+  opacity: 0;
+`;
 
 export default function Projects() {
   const [project, setProject] = useState();
@@ -38,7 +37,7 @@ export default function Projects() {
       <Container flex start>
         <ArrowIcon />
       </Container>
-      
+
       <Container flex jcCenter wrap>
         {project.map((project, i) => {
           return (
@@ -54,7 +53,7 @@ export default function Projects() {
         })}
       </Container>
       <Link to="/login">
-      <InvisibleIcon src={Circle}/>
+        <InvisibleIcon src={Circle} />
       </Link>
       <Container flex start>
         <ArrowIcon />

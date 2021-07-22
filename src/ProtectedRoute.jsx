@@ -1,4 +1,4 @@
-import { Route, Redirect } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom";
 
 const ProtectedRoute = ({ children, ...rest }) => {
   return (
@@ -11,7 +11,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
           <Redirect
             to={{
               pathname: "/admin",
-              state: { from: location }
+              state: { from: location },
             }}
           />
         )

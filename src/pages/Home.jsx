@@ -25,7 +25,7 @@ const PaddedDiv = styled(Container)`
 
 const MarginDiv = styled(PaddedDiv)`
   height: 20rem;
-  margin-bottom: 3rem
+  margin-bottom: 3rem;
 `;
 const RoundedDiv = styled(Container)`
   padding: 2rem;
