@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import ProjectAdmin from "../components/ProjectAdmin";
 import {
   Container,
@@ -9,6 +10,7 @@ import {
   SmallIcon,
 } from "../assets/styles/Theme";
 import Check from "../assets/images/icons8-check.png";
+import Logout from "../assets/images/icons8-logout.png";
 import { FormControl, InputLabel, Input, TextField } from "@material-ui/core";
 
 export default function Admin() {
@@ -61,8 +63,19 @@ export default function Admin() {
     }
   };
 
+  const handleLogout = () => {
+    window.localStorage.clear();
+  };
+
+  console.log(localStorage)
+
   return (
     <>
+    <Container flex end>
+      <Link to="/projects">
+      <SmallIcon src={Logout} onClick={handleLogout}/>
+      </Link>
+    </Container>
       <Container flex jcCenter wrap>
         {project.map((project, i) => {
           return (

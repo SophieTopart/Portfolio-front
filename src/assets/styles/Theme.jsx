@@ -23,6 +23,7 @@ export const Container = styled.div`
   ${(props) => props.spaceA && "justify-content:space-around"}
   ${(props) => props.spaceB && "justify-content:space-between"}
   ${(props) => props.start && "justify-content:flex-start"}
+  ${(props) => props.end && "justify-content:flex-end"}
   ${(props) => props.wrap && "flex-wrap:wrap"}
 `;
 
