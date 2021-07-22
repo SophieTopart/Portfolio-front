@@ -6,7 +6,7 @@ import React from "../assets/images/react.png";
 import Node from "../assets/images/node.png";
 import StyledComp from "../assets/images/styled.png";
 import Time from "../assets/images/icons8-time.png";
-import Wheel from "../assets/images/icons8-roues.png"
+import Wheel from "../assets/images/icons8-roues.png";
 import IconsContact from "../assets/styles/Icons";
 
 const Logo = styled.img`
@@ -24,8 +24,8 @@ const PaddedDiv = styled(Container)`
 `;
 
 const MarginDiv = styled(PaddedDiv)`
-height: 20rem;
-`
+  height: 20rem;
+`;
 const RoundedDiv = styled(Container)`
   padding: 2rem;
   background: ${Theme.colorBeige};
@@ -69,16 +69,18 @@ export default function Home() {
           </Container>
         </RoundedDiv>
         <MarginDiv>
-                  <h2>Mes projets</h2>
-                  <p>
+          <h2>Mes projets</h2>
+          <p>
             L'un des credo de la Wild Code School, <br />
-            c'est la pédagogie inversée, et donc l'apprentissage par la pratique. <br />
-                      Au cours de ma formation, nous avons pu réaliser trois projets,<br />
+            c'est la pédagogie inversée, et donc l'apprentissage par la
+            pratique. <br />
+            Au cours de ma formation, nous avons pu réaliser trois projets,
+            <br />
             dont un professionnel, selon les demandes de notre cliente. <br />
             Nous avons également participé à deux hackathons.
-                  </p>
-                  <h4>N'hésitez pas à aller les étudier en détail !</h4>
-                  <Link to="/projects">
+          </p>
+          <h4>N'hésitez pas à aller les étudier en détail !</h4>
+          <Link to="/projects">
             <Icon src={Wheel} />
           </Link>
         </MarginDiv>

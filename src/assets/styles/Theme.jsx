@@ -22,6 +22,7 @@ export const Container = styled.div`
   ${(props) => props.jcCenter && "justify-content:center"};
   ${(props) => props.spaceA && "justify-content:space-around"}
   ${(props) => props.start && "justify-content:flex-start"}
+  ${(props) => props.wrap && "flex-wrap:wrap"}
 `;
 
 export const Icon = styled.img`
