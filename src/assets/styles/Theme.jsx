@@ -21,6 +21,7 @@ export const Container = styled.div`
   ${(props) => props.acCenter && "align-content:center"};
   ${(props) => props.jcCenter && "justify-content:center"};
   ${(props) => props.spaceA && "justify-content:space-around"}
+  ${(props) => props.spaceB && "justify-content:space-between"}
   ${(props) => props.start && "justify-content:flex-start"}
   ${(props) => props.wrap && "flex-wrap:wrap"}
 `;
@@ -42,5 +43,27 @@ const Theme = {
   colorYellow: "#FFC30F",
   colorBeige: "#E6D7D2",
 };
+
+export const ProjectContainer = styled(Container)`
+  height: 28rem;
+  width: 22rem;
+  border-top-left-radius: 20%;
+  border-top-right-radius: 40%;
+  border-bottom-left-radius: 25%;
+  border-bottom-right-radius: 30%;
+  margin: 2rem;
+  box-shadow: -10px 5px 5px rgba(191, 191, 191, 1),
+    1em 0 0.4em rgba(232, 232, 232, 1);
+`;
+export const SmallIcon = styled(Icon)`
+  width: 2rem;
+  height: 2rem;
+  }
+`;
+
+export const NarrowContainer = styled(Container)`
+  width: 15rem;
+  text-align: justify;
+`;
 
 export default Theme;

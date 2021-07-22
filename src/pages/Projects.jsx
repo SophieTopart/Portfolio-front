@@ -1,13 +1,20 @@
-import { useState, useEffect } from "react"
-import axios from "axios"
-import ArrowIcon from "../assets/styles/Arrow"
-import { Container } from "../assets/styles/Theme"
-import Project from "../components/Project"
+import { useState, useEffect } from "react";
+import axios from "axios";
+import styled from "styled-components";
+import ArrowIcon from "../assets/styles/Arrow";
+import Circle from "../assets/images/icons8-circle.png";
+import { Container, Icon } from "../assets/styles/Theme";
+import Project from "../components/Project";
+
+const InvisibleIcon = styled(Icon)`
+opacity: 0;
+
+`
 
 export default function Projects() {
-  const [project, setProject] = useState()
-  const [error, setError] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [project, setProject] = useState();
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getProject = async () => {
@@ -30,22 +37,22 @@ export default function Projects() {
       <Container flex start>
         <ArrowIcon />
       </Container>
-      <Container flex wrap>
-      {project.map((project, i) => {
-        return (
-          <Project
-          key={i}
-          id={project.id}
-          title={project.title}
-          description={project.description}
-          github={project.github}
-          deploy={project.deploy}
-        />
-        )
-      })
-        }
-        </Container>
-
+      
+      <Container flex jcCenter wrap>
+        {project.map((project, i) => {
+          return (
+            <Project
+              key={i}
+              id={project.id}
+              title={project.title}
+              description={project.description}
+              github={project.github}
+              deploy={project.deploy}
+            />
+          );
+        })}
+      </Container>
+      <InvisibleIcon src={Circle}/>
       <Container flex start>
         <ArrowIcon />
       </Container>
