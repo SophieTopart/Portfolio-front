@@ -7,6 +7,8 @@ import Node from "../assets/images/node.png";
 import StyledComp from "../assets/images/styled.png";
 import Time from "../assets/images/icons8-time.png";
 import Wheel from "../assets/images/icons8-roues.png";
+import Left from "../assets/images/icons8-gauche.png";
+import Right from "../assets/images/icons8-droit.png";
 import IconsContact from "../assets/styles/Icons";
 
 const Logo = styled.img`
@@ -36,6 +38,12 @@ const RoundedDiv = styled(Container)`
   border-bottom-right-radius: 30%;
 `;
 
+const BlockIcon= styled(Icon)`
+:hover {
+  opacity: 1;
+}
+`
+
 export default function Home() {
   return (
     <>
@@ -59,13 +67,18 @@ export default function Home() {
           <p>
             Une formation intensive en ReactJS et NodeJS plus tard, <br />
             me voilà jetée dans le grand bain. <br />
-            <h4>Pour en savoir plus sur mon parcours, c'est par là...</h4>
+            <h4>Pour en savoir plus sur mon parcours, cliquez par là...</h4>
           </p>
+          <Container>
           <Link to="/myself">
             <Icon src={Time} />
           </Link>
-          <h4>Ou pour me contacter, c'est par ici !</h4>
+          <BlockIcon src={Left} /> 
+          </Container>
+          
+          <h4>Ou pour me contacter, cliquez par ici !</h4>
           <Container>
+          <BlockIcon src={Right} /> 
             <IconsContact />
           </Container>
         </RoundedDiv>
@@ -83,6 +96,7 @@ export default function Home() {
           <h4>N'hésitez pas à aller les étudier en détail !</h4>
           <Link to="/projects">
             <Icon src={Wheel} />
+            <BlockIcon src={Left} /> 
           </Link>
         </MarginDiv>
       </Container>

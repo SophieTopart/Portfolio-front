@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <RoundHeader>
       <H1>Sophie Topart</H1>
-      <H2>Développeuse web junior</H2>
+      <H2>Développeuse web</H2>
     </RoundHeader>
   );
 }
