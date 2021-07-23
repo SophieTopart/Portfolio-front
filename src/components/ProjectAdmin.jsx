@@ -37,8 +37,6 @@ export default function ProjectAdmin({
   const [newValues, setNewValues] = useState({
     title,
     description,
-    github,
-    deploy,
   });
 
   const handleChangeReadOnly = () => {
@@ -47,17 +45,20 @@ export default function ProjectAdmin({
 
   const changeInputValue = (e) => {
     setNewValues({
-      ...newValues,
+      title,
+      description,
       [e.target.name]: e.target.value,
     });
   };
+
+  console.log(newValues);
 
   const modifyData = () => {
     axios
       .put(`http://localhost:8000/projects/${id}`, newValues)
       .then((res) => {
         console.log("Status :", res.status);
-        console.log("Datas :", res.data);
+        console.log("Data :", res.data);
         toast.success(`Le projet a été modifié.`);
       })
       .catch((err) => {

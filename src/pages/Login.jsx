@@ -29,7 +29,6 @@ export default function Login() {
       .post("http://localhost:8000/login", { ...data })
       .then((res) => {
         console.log(res);
-        window.localStorage.setItem("token", res.data.token);
         window.localStorage.setItem("id", res.data.payload.id);
         history.push("/check");
         toast.success(`Well done!`);
@@ -60,9 +59,8 @@ export default function Login() {
             aria-describedby="my-helper-text"
           />
         </FormControl>
-   
+
         <SmallIcon src={Check} onClick={login} />
-   
       </LongContainer>
     </form>
   );

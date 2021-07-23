@@ -5,7 +5,7 @@ import Linkedin from "../images/icons8-linkedin.png";
 export default function IconsContact() {
   return (
     <>
-    <a
+      <a
         href="https://www.linkedin.com/in/sophie-topart-59a0b893/"
         target="_blank"
         rel="noopener noreferrer"
@@ -19,7 +19,6 @@ export default function IconsContact() {
       >
         <Icon src={Github} />
       </a>
-      
     </>
   );
 }

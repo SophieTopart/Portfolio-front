@@ -38,11 +38,11 @@ const RoundedDiv = styled(Container)`
   border-bottom-right-radius: 30%;
 `;
 
-const BlockIcon= styled(Icon)`
-:hover {
-  opacity: 1;
-}
-`
+const BlockIcon = styled(Icon)`
+  :hover {
+    opacity: 1;
+  }
+`;
 
 export default function Home() {
   return (
@@ -70,15 +70,15 @@ export default function Home() {
             <h4>Pour en savoir plus sur mon parcours, cliquez par là...</h4>
           </p>
           <Container>
-          <Link to="/myself">
-            <Icon src={Time} />
-          </Link>
-          <BlockIcon src={Left} /> 
+            <Link to="/myself">
+              <Icon src={Time} />
+            </Link>
+            <BlockIcon src={Left} />
           </Container>
-          
+
           <h4>Ou pour me contacter, cliquez par ici !</h4>
           <Container>
-          <BlockIcon src={Right} /> 
+            <BlockIcon src={Right} />
             <IconsContact />
           </Container>
         </RoundedDiv>
@@ -96,7 +96,7 @@ export default function Home() {
           <h4>N'hésitez pas à aller les étudier en détail !</h4>
           <Link to="/projects">
             <Icon src={Wheel} />
-            <BlockIcon src={Left} /> 
+            <BlockIcon src={Left} />
           </Link>
         </MarginDiv>
       </Container>

@@ -17,12 +17,7 @@ export default function Admin() {
   const [project, setProject] = useState();
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [data, setData] = useState({
-    title: "",
-    description: "",
-    github: "",
-    deploy: "",
-  });
+  const [data, setData] = useState({});
 
   useEffect(() => {
     const getProject = async () => {
@@ -46,6 +41,7 @@ export default function Admin() {
       [e.target.name]: e.target.value,
     });
   };
+
   console.log(data);
 
   const createProject = async (e) => {
@@ -67,74 +63,76 @@ export default function Admin() {
     window.localStorage.clear();
   };
 
-  console.log(localStorage);
-
   return (
     <>
-      <Container flex end>
-        <Link to="/projects">
-          <SmallIcon src={Logout} onClick={handleLogout} />
-        </Link>
-      </Container>
-      <Container flex jcCenter wrap>
-        {project.map((project, i) => {
-          return (
-            <ProjectAdmin
-              key={i}
-              id={project.id}
-              title={project.title}
-              description={project.description}
-              github={project.github}
-              deploy={project.deploy}
-            />
-          );
-        })}
-      </Container>
-      <Container flex jcCenter>
-        <ProjectContainer flex column jcCenter aiCenter>
-          <NarrowContainer>
-            <form onSubmit={createProject}>
-              <FormControl>
-                <InputLabel htmlFor="title">Title</InputLabel>
-                <Input
-                  id="title"
-                  name="title"
-                  onChange={onChangeData}
-                  aria-describedby="my-helper-text"
+      {localStorage.id && (
+        <>
+          <Container flex end>
+            <Link to="/projects">
+              <SmallIcon src={Logout} onClick={handleLogout} />
+            </Link>
+          </Container>
+          <Container flex jcCenter wrap>
+            {project.map((project, i) => {
+              return (
+                <ProjectAdmin
+                  key={i}
+                  id={project.id}
+                  title={project.title}
+                  description={project.description}
+                  github={project.github}
+                  deploy={project.deploy}
                 />
-              </FormControl>
-              <FormControl>
-                <TextField
-                  multiline
-                  label="Description"
-                  name="description"
-                  onChange={onChangeData}
-                  aria-describedby="my-helper-text"
-                />
-              </FormControl>
-              <FormControl>
-                <InputLabel htmlFor="github">Github</InputLabel>
-                <Input
-                  id="github"
-                  name="github"
-                  onChange={onChangeData}
-                  aria-describedby="my-helper-text"
-                />
-              </FormControl>
-              <FormControl>
-                <InputLabel htmlFor="deploy">Deploy</InputLabel>
-                <Input
-                  id="deploy"
-                  name="deploy"
-                  onChange={onChangeData}
-                  aria-describedby="my-helper-text"
-                />
-              </FormControl>
-              <SmallIcon src={Check} onClick={createProject} />
-            </form>
-          </NarrowContainer>
-        </ProjectContainer>
-      </Container>
+              );
+            })}
+          </Container>
+          <Container flex jcCenter>
+            <ProjectContainer flex column jcCenter aiCenter>
+              <NarrowContainer>
+                <form onSubmit={createProject}>
+                  <FormControl>
+                    <InputLabel htmlFor="title">Title</InputLabel>
+                    <Input
+                      id="Title"
+                      name="title"
+                      onChange={onChangeData}
+                      aria-describedby="my-helper-text"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <TextField
+                      multiline
+                      label="Description"
+                      name="description"
+                      onChange={onChangeData}
+                      aria-describedby="my-helper-text"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="Github">Github</InputLabel>
+                    <Input
+                      id="Github"
+                      name="github"
+                      onChange={onChangeData}
+                      aria-describedby="my-helper-text"
+                    />
+                  </FormControl>
+                  <FormControl>
+                    <InputLabel htmlFor="Deploy">Deploy</InputLabel>
+                    <Input
+                      id="Deploy"
+                      name="deploy"
+                      onChange={onChangeData}
+                      aria-describedby="my-helper-text"
+                    />
+                  </FormControl>
+                  <SmallIcon src={Check} onClick={createProject} />
+                </form>
+              </NarrowContainer>
+            </ProjectContainer>
+          </Container>
+        </>
+      )}
     </>
   );
 }
