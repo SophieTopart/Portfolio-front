@@ -6,6 +6,7 @@ import {
   Container,
   ProjectContainer,
   SmallIcon,
+  Image,
   NarrowContainer,
 } from "../assets/styles/Theme";
 import Github from "../assets/images/icons8-github.png";
@@ -22,12 +23,13 @@ import {
 } from "@material-ui/core";
 
 const AdminContainer = styled(ProjectContainer)`
-  height: 30rem;
+  height: 40rem;
   width: 25rem;
 `;
 
 export default function ProjectAdmin({
   id,
+  image,
   title,
   description,
   github,
@@ -55,7 +57,7 @@ export default function ProjectAdmin({
 
   const modifyData = () => {
     axios
-      .put(`http://localhost:8000/projects/${id}`, newValues)
+      .put(`http://portfolio-sophietopart.herokuapp.com//projects/${id}`, newValues)
       .then((res) => {
         console.log("Status :", res.status);
         console.log("Data :", res.data);
@@ -68,7 +70,7 @@ export default function ProjectAdmin({
 
   const deleteProject = () => {
     axios
-      .delete(`http://localhost:8000/projects/${id}`)
+      .delete(`https://portfolio-sophietopart.herokuapp.com/projects/${id}`)
       .then(
         (res) => console.log("Status :", res.status),
         toast.success(`Le projet a été supprimé.`)
@@ -84,6 +86,7 @@ export default function ProjectAdmin({
       {readOnly ? (
         <>
           <h2>{title}</h2>
+          <Image src={image} alt="image"/>
           <NarrowContainer>
             <p>{description}</p>
           </NarrowContainer>
@@ -103,6 +106,16 @@ export default function ProjectAdmin({
         </>
       ) : (
         <>
+          <FormControl>
+            <InputLabel htmlFor="image">Image</InputLabel>
+            <Input
+              id="image"
+              name="image"
+              value={newValues.image}
+              onChange={changeInputValue}
+              aria-describedby="my-helper-text"
+            />
+          </FormControl>
           <FormControl>
             <InputLabel htmlFor="title">Title</InputLabel>
             <Input

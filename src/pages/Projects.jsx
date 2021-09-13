@@ -19,7 +19,7 @@ export default function Projects() {
   useEffect(() => {
     const getProject = async () => {
       try {
-        const project = await axios.get("http://localhost:8000/projects");
+        const project = await axios.get("https://portfolio-sophietopart.herokuapp.com/projects");
         setProject(project.data);
       } catch (err) {
         setError(err);
@@ -44,6 +44,7 @@ export default function Projects() {
             <Project
               key={i}
               id={project.id}
+              image={project.image}
               title={project.title}
               description={project.description}
               github={project.github}

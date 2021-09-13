@@ -22,7 +22,7 @@ export default function Admin() {
   useEffect(() => {
     const getProject = async () => {
       try {
-        const project = await axios.get("http://localhost:8000/projects");
+        const project = await axios.get("https://portfolio-sophietopart.herokuapp.com/projects");
         setProject(project.data);
       } catch (err) {
         setError(err);
@@ -49,7 +49,7 @@ export default function Admin() {
 
     try {
       setLoading(true);
-      await axios.post("http://localhost:8000/projects", { ...data });
+      await axios.post("https://portfolio-sophietopart.herokuapp.com/projects", { ...data });
       toast.success("Le projet a été rajouté.");
     } catch (err) {
       console.log(err);
@@ -78,6 +78,7 @@ export default function Admin() {
                 <ProjectAdmin
                   key={i}
                   id={project.id}
+                  image={project.image}
                   title={project.title}
                   description={project.description}
                   github={project.github}
@@ -90,6 +91,15 @@ export default function Admin() {
             <ProjectContainer flex column jcCenter aiCenter>
               <NarrowContainer>
                 <form onSubmit={createProject}>
+                  <FormControl>
+                    <InputLabel htmlFor="image">Image</InputLabel>
+                    <Input
+                      id="Image"
+                      name="image"
+                      onChange={onChangeData}
+                      aria-describedby="my-helper-text"
+                    />
+                  </FormControl>
                   <FormControl>
                     <InputLabel htmlFor="title">Title</InputLabel>
                     <Input

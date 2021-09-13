@@ -3,6 +3,7 @@ import Theme, {
   Container,
   ProjectContainer,
   SmallIcon,
+  Image,
   NarrowContainer,
 } from "../assets/styles/Theme";
 import Github from "../assets/images/icons8-github.png";
@@ -12,10 +13,12 @@ const BeigeProjectContainer = styled(ProjectContainer)`
   background: ${Theme.colorBeige};
 `;
 
-export default function Project({ title, description, github, deploy }) {
+export default function Project({ image, title, description, github, deploy }) {
   return (
     <BeigeProjectContainer flex column aiCenter jcCenter>
+      
       <h2>{title}</h2>
+      <Image src={image} />
       <NarrowContainer>
         <p>{description}</p>
       </NarrowContainer>

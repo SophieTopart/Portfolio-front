@@ -27,15 +27,6 @@ export const Container = styled.div`
   ${(props) => props.wrap && "flex-wrap:wrap"}
 `;
 
-export const Icon = styled.img`
-  width: 3rem;
-  height: 3rem;
-  margin: 1rem;
-  :hover {
-    opacity: 0.5;
-  }
-`;
-
 const Theme = {
   colorPurple: "#581845",
   colorStrawberry: "#900C3F",
@@ -46,7 +37,7 @@ const Theme = {
 };
 
 export const ProjectContainer = styled(Container)`
-  height: 28rem;
+  height: 35rem;
   width: 22rem;
   border-top-left-radius: 20%;
   border-top-right-radius: 40%;
@@ -56,11 +47,26 @@ export const ProjectContainer = styled(Container)`
   box-shadow: -10px 5px 5px rgba(191, 191, 191, 1),
     1em 0 0.4em rgba(232, 232, 232, 1);
 `;
+
+export const Icon = styled.img`
+  width: 3rem;
+  height: 3rem;
+  margin: 1rem;
+  :hover {
+    opacity: 0.5;
+  }
+`;
+
 export const SmallIcon = styled(Icon)`
   width: 2rem;
   height: 2rem;
   }
 `;
+
+export const Image = styled.img`
+  width: 70%;
+  height: 70%
+`
 
 export const NarrowContainer = styled(Container)`
   width: 15rem;
