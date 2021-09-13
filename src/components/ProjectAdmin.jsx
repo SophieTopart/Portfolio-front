@@ -57,7 +57,7 @@ export default function ProjectAdmin({
 
   const modifyData = () => {
     axios
-      .put(`http://portfolio-sophietopart.herokuapp.com//projects/${id}`, newValues)
+      .put(`http://portfolio-sophietopart.herokuapp.com/projects/${id}`, newValues)
       .then((res) => {
         console.log("Status :", res.status);
         console.log("Data :", res.data);

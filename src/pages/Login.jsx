@@ -26,7 +26,7 @@ export default function Login() {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("https://portfolio-sophietopart.herokuapp.com/ogin", { ...data })
+      .post("https://portfolio-sophietopart.herokuapp.com/login", { ...data })
       .then((res) => {
         console.log(res);
         window.localStorage.setItem("id", res.data.payload.id);
